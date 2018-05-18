@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
 
     unauthenticated do
-      root 'posts#new', as: :unauthenticated_root
+      root 'posts#index', as: :unauthenticated_root
     end
   end
 
