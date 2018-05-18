@@ -3,24 +3,12 @@ nav.navbar
     .navbar-brand
       a.navbar-item href="../" 
         img alt="Logo" src="https://imgur.com/ffosNhT.png" /
-      span.navbar-burger.burger data-target="navbarMenu" 
+      span.navbar-burger.burger data-target="navbarMenuAdmin" 
         span aria-hidden="true"
         span aria-hidden="true"
         span aria-hidden="true"
-    #navbarMenu.navbar-menu
+    #navbarMenuAdmin.navbar-menu
       .navbar-end
-        a.navbar-item.is-active
-          | Home
-        a.navbar-item
-          | Examples
-        a.navbar-item
-          | Features
-        a.navbar-item
-          | Team
-        a.navbar-item
-          | Archives
-        a.navbar-item
-          | Help
         .navbar-item.has-dropdown.is-hoverable
           a.navbar-link
             | Account
@@ -33,4 +21,4 @@ nav.navbar
               | Settings
             hr.navbar-divider/
             .navbar-item
-              | Logout
+              = link_to('Cerrar sesión', destroy_user_session_path, method: :delete)
