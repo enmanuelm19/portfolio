@@ -1,0 +1,28 @@
+nav.breadcrumb aria-label="breadcrumbs" 
+  ul
+    li
+      = link_to 'Admin', admin_dashboard_path
+    li
+      = link_to 'Posts', admin_posts_path
+    li.is-active
+      a arria-current='page' href='#' Nuevo
+br
+section.box
+  = form_for [:admin, @post] do |f|
+    - if @post.errors.any?
+      .notification.is-danger
+        button.delete
+        = @post.errors.full_messages.flatten.join('<br>').html_safe
+    .field
+      label.label Título
+      .control
+        = f.text_field :title, class: 'input'
+    .field
+      label.label Contenido
+      .control
+        = f.text_area :content, class: 'textarea'
+    .field.is-grouped.is-grouped-right
+      .control
+        = f.submit 'Guardar', class: 'button is-primary is-outlined'
+      .control
+        = link_to 'Cancelar', admin_posts_path, class: 'button is-danger is-outlined'

@@ -1,12 +1,6 @@
+require 'blog_render'
 module ApplicationHelper
-
-  class HTMLwithPygments < Redcarpet::Render::HTML
-    def block_code(code, language)
-      Pygments.highlight(code, lexer: language)
-    end
-  end
   def parse_content(content)
-    renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
     options = {
       autolink: true,
       no_intra_emphasis: true,
@@ -16,6 +10,6 @@ module ApplicationHelper
       strikethrouhg: true,
       superscript: true
     }
-    Redcarpet::Markdown.new(renderer, options).render(content).html_safe
+    Redcarpet::Markdown.new(BlogRender, options).render(content).html_safe
   end
 end

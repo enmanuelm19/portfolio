@@ -1,13 +1,16 @@
-section.hero.is-info.is-medium.is-bold
-  .hero-body.posts-presentation
-    .container.has-text-centered
-      h1.title = "#{@post.title}"
-
-.container.is-fluid
+nav.breadcrumb aria-label="breadcrumbs" 
+  ul
+    li
+      = link_to 'Admin', admin_dashboard_path
+    li
+      = link_to 'Posts', admin_posts_path
+    li.is-active
+      a aria-current='page' href='#' Post
+br
+section.container.is-fluid
   div
     .columns
       .column
-        /! START ARTICLE
         .card.article
           .card-content
             .media

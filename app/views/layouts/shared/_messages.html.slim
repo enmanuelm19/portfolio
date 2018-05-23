@@ -1,0 +1,8 @@
+- if notice
+  .notification.is-success id='success_notification'
+    button.delete onClick="closeNotification()"
+    = notice.html_safe
+- if alert
+  .notification.is-danger id='error_notification'
+    button.delete onClick="closeError()"
+    = alert.html_safe

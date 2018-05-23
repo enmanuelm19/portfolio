@@ -14,3 +14,13 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+function closeNotification(){
+  let element = document.getElementById('success_notification');
+  element.remove(element.selectedIndex);
+}
+
+function closeErro(){
+  let element = document.getElementById('error_notification');
+  element.remove(element.selectedIndex);
+}
