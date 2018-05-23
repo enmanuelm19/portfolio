@@ -16,11 +16,11 @@
 //= require_tree .
 
 function closeNotification(){
-  let element = document.getElementById('success_notification');
-  element.remove(element.selectedIndex);
+  var notification = document.getElementById('success_notification');
+  notification.remove(notification.selectedIndex);
 }
 
 function closeErro(){
-  let element = document.getElementById('error_notification');
-  element.remove(element.selectedIndex);
+  var notification = document.getElementById('error_notification');
+  notification.remove(notification.selectedIndex);
 }
