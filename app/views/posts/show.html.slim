@@ -1,0 +1,37 @@
+section.hero.is-info.is-medium.is-bold
+  .hero-body.posts-presentation
+    .container.has-text-centered
+      h1.title = "#{@post.title}"
+
+.container.is-fluid
+  div
+    .columns
+      .column
+        /! START ARTICLE
+        .card.article
+          .card-content
+            .media
+              .media-content.has-text-centered
+                p.title.article-title = "#{@post.title}"
+                .tags.has-addons.level-item
+                  span.tag.is-rounded.is-info ="#{@post.user.email}"
+                  span.tag.is-rounded = "#{@post.created_at}"
+            .content.article-body
+              p Non arcu risus quis varius quam quisque. Dictum varius duis at consectetur lorem. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper.
+              p
+                | Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Accumsan lacus vel facilisis volutpat. Non sodales neque sodales ut etiam.
+                | Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus.
+              h3.has-text-centered How to properly center tags in bulma?
+              p Proper centering of tags in bulma is done with class:
+              pre level-item
+              | Voluptat ut farmacium tellus in metus vulputate. Feugiat in fermentum posuere urna nec. Pharetra convallis posuere morbi leo urna molestie.
+              | Accumsan lacus vel facilisis volutpat est velit egestas. Fermentum leo vel orci porta. Faucibus interdum posuere lorem ipsum.
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tortor interdum neque ullamcorper imperdiet. Etiam eget sem id diam bibendum tincidunt. Vivamus dictum egestas nibh eu viverra. Aliquam placerat lacus eget eros scelerisque maximus 
+              | dignissim in metus. Praesent sagittis odio eget ultrices mattis. Cras consectetur ipsum lacus, ut tempor velit consectetur eget. Etiam sit amet vehicula metus. Nam lobortis enim felis, nec semper felis dapibus ultrices. Fusce elementum eu mauris dignissim condimentum. Praesent at convallis est. Integer ac neque pretium, faucibus arcu in, semper nulla. 
+              | Duis faucibus odio ligula, sit amet sollicitudin sem rutrum et. Nulla vel sem a quam elementum lacinia.
+
+              | Cras mattis nisi vitae nisi euismod sollicitudin. Donec elementum accumsan mauris et dapibus. Donec consequat ex non consequat feugiat. Ut id auctor mauris. Ut est erat, rhoncus ut felis non, dignissim feugiat mi. Sed eget vulputate tellus. Ut dictum nisl eget odio pharetra hendrerit. Quisque quis arcu nulla. 
+              | Aliquam vulputate rhoncus tincidunt. Maecenas ullamcorper diam id egestas ultrices. Integer quis varius elit, nec aliquam ligula.
+
+              | Phasellus bibendum volutpat magna, laoreet dapibus leo pretium eget. Ut id mi convallis, egestas tellus vel, ultrices mi. Vestibulum non metus mollis, imperdiet lectus ut, convallis nibh. Sed eget suscipit turpis. Sed dapibus ac nisl eu feugiat. Etiam posuere feugiat neque sed porta. Phasellus euismod luctus ligula. 
+              | Pellentesque fringilla hendrerit libero quis ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam luctus tellus dui, sit amet sodales eros efficitur et. Donec congue mattis mi.

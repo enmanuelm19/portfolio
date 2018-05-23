@@ -13,6 +13,8 @@ gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
 gem 'pg', '~> 0.20'
+gem 'pygments.rb'
+gem 'redcarpet'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 

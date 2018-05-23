@@ -1,3 +1,8 @@
 = render partial: 'layouts/shared/admin_nav'
 br
-= yield
+.container.is-fluid
+  .columns
+    .column.is-3
+      = render partial: 'layouts/shared/admin_menu'
+    .column.is-9
+      = yield

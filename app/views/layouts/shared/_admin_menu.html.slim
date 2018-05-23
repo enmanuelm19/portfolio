@@ -1,0 +1,37 @@
+aside.menu
+  p.menu-label.has-text-black
+    | General
+  ul.menu-list.has-text-black
+    li
+      = link_to 'Dashboard', admin_dashboard_path, class: 'has-text-black is-active'
+    li
+      a.has-text-black Customers
+  p.menu-label.has-text-black
+    | Administration
+  ul.menu-list.has-text-black
+    li
+      = link_to 'Posts', admin_posts_path, class: 'has-text-black'
+    li
+      a.has-text-black Manage Your Team
+      ul
+        li
+          a.has-text-black Members
+        li
+          a.has-text-black Plugins
+        li
+          a.has-text-black Add a member
+    li
+      a.has-text-black Invitations
+    li
+      a.has-text-black Cloud Storage Environment Settings
+    li
+      a.has-text-black Authentication
+  p.menu-label.has-text-white
+    | Transactions
+  ul.menu-list
+    li
+      a.has-text-white Payments
+    li
+      a.has-text-black Transfers
+    li
+      a.has-text-black Balance
