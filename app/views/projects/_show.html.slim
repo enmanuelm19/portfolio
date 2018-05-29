@@ -1,0 +1,18 @@
+.modal-background
+.modal-content style="width: 1200px"
+  .box
+    .card
+      .card-image
+        figure.image.is-3by1
+          img src="https://bulma.io/images/placeholders/1280x960.png"
+      .card-content
+        h2.title = "#{project.title}"
+        .content
+          p = "#{project.description}"
+button#close-project class='modal-close' onClick="closeModal()"
+javascript:
+  function closeModal(){
+    var modal = document.getElementById('show-project');
+    modal.removeAttribute('class');
+    modal.setAttribute('class', 'modal');
+  }

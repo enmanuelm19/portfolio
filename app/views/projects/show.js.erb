@@ -1,0 +1,6 @@
+var modal = document.getElementById('show-project');
+while(modal.firstChild){
+  modal.removeChild(modal.firstChild);
+}
+modal.setAttribute('class', 'modal is-active');
+modal.insertAdjacentHTML('beforeend',"<%= escape_javascript(render(partial: 'show', locals: { project: @project }))%>");
