@@ -1,5 +1,5 @@
 class Admin::ProjectsController < Admin::AdminController
-  before_action :set_project, only: %i[edit update destroy]
+  before_action :set_project, only: %i[edit update destroy show]
   def index
     @projects = Project.all
   end
@@ -9,6 +9,8 @@ class Admin::ProjectsController < Admin::AdminController
   end
 
   def edit; end
+
+  def show; end
 
   def create
     @project = Project.new(project_params)

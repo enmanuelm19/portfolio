@@ -3,7 +3,7 @@ nav.breadcrumb aria-label="breadcrumbs"
     li
       = link_to 'Admin', admin_dashboard_path
     li
-      = link_to 'Posts', admin_projects_path
+      = link_to 'Proyectos', admin_projects_path
     li.is-active
       a aria-current='page' href='#' Proyecto
 br
@@ -20,4 +20,4 @@ section.container.is-fluid
                   span.tag.is-rounded.is-info ="#{@project.user.email}"
                   span.tag.is-rounded = "#{@project.created_at}"
             .content.article-body
-              = parse_content(@project.content)
+              = parse_content(@project.description)

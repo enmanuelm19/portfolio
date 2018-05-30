@@ -25,6 +25,6 @@ section.box
             .content
               = truncate(project.description, length: 75)
           footer.card-footer
-            / = link_to 'Ver', admin_post_path(post), class: 'card-footer-item'
+            = link_to 'Ver', admin_project_path(project), class: 'card-footer-item'
             = link_to 'Editar', edit_admin_project_path(project), class: 'card-footer-item'
             = link_to 'Eliminar', admin_project_path(project), class: 'card-footer-item', method: :delete, data: { confirm: '¿Estas seguro?' }
