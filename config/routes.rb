@@ -13,9 +13,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :posts
+    resources :projects
     get 'dashboard', to: 'dashboard#index'
   end
 
-  resources :posts, only: [:index, :show]
+  resources :posts, only: %i[index show]
   resources :projects, only: %i[index show]
 end

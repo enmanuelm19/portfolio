@@ -11,7 +11,7 @@ RSpec.describe ProjectsController, type: :controller do
   describe 'GET show' do
     it 'show the project' do
       project = FactoryBot.create(:project)
-      get :show, params: { id: project.to_param }
+      get :show, params: { id: project.to_param }, format: :js, xhr: true
       expect(assigns(:project)).to eq(project)
     end
   end

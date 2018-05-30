@@ -1,0 +1,30 @@
+nav.breadcrumb aria-label="breadcrumbs" 
+  ul
+    li
+      = link_to 'Admin', admin_dashboard_path
+    li.is-active
+      a aria-current="page" href="#"  Proyectos
+br
+section.box
+  .columns.is-multiline.is-desktop
+    .column.is-1
+      = link_to 'Nuevo', new_admin_project_path, class: 'button is-primary is-outlined'
+    .column.is-11
+      input.input.is-rounded placeholder="Buscar..."
+    - @projects.each do |project|
+      .column.is-4
+        .card
+          .card-image
+            figure.image.is-4by3
+              img src="https://bulma.io/images/placeholders/1280x960.png"
+          .card-content
+            .media
+              .media-content
+                p.title.is-4 = "#{project.user.email}"
+                p.subtitle.is-6 Twitter
+            .content
+              = truncate(project.description, length: 75)
+          footer.card-footer
+            / = link_to 'Ver', admin_post_path(post), class: 'card-footer-item'
+            = link_to 'Editar', edit_admin_project_path(project), class: 'card-footer-item'
+            = link_to 'Eliminar', admin_project_path(project), class: 'card-footer-item', method: :delete, data: { confirm: '¿Estas seguro?' }
