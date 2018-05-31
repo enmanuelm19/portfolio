@@ -9,9 +9,8 @@ nav.navbar
         span aria-hidden="true"
     #navbarMenu.navbar-menu
       .navbar-end
-        a.navbar-item.is-active
-          | Inicio
+        = link_to 'Inicio', root_path, class: 'navbar-item'
         = link_to 'Posts', posts_path, class: 'navbar-item'
         = link_to 'Proyectos', projects_path, class: 'navbar-item'
-        a.navbar-item
+        a.navbar-item href="#contacto"
           | Contacto

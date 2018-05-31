@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :users
 
   devise_scope :user do
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
     end
 
     unauthenticated do
-      root 'posts#index', as: :unauthenticated_root
+      root 'home#index', as: :unauthenticated_root
     end
   end
 

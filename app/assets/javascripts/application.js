@@ -25,3 +25,10 @@ function closeErro(){
   var notification = document.getElementById('error_notification');
   notification.remove(notification.selectedIndex);
 }
+
+window.onload = function () {
+  var typed = new Typed("#home-description", {
+    strings: ['Soy Ingeniero Informático', 'Desarrollador Web', 'Fan del Chelsea F.C', "I'm a Software Engineer",  "Chelsea F.C fan", "Web Developer"],
+    typeSpeed: 20
+  })
+}

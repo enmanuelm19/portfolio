@@ -1,13 +1,17 @@
-aside.menu
-  p.menu-label.has-text-black
-    | General
-  ul.menu-list.has-text-black
-    li
-      = link_to 'Dashboard', admin_dashboard_path, class: 'has-text-black is-active'
-  p.menu-label.has-text-black
-    | Administración
-  ul.menu-list.has-text-black
-    li
-      = link_to 'Posts', admin_posts_path, class: 'has-text-black'
-    li
-      = link_to 'Proyectos', admin_projects_path, class: 'has-text-black'
+br
+br
+br
+.box
+  aside.menu
+    p.menu-label.has-text-black
+      | General
+    ul.menu-list.has-text-black
+      li
+        = link_to 'Dashboard', admin_dashboard_path, class: 'has-text-black is-active'
+    p.menu-label.has-text-black
+      | Administración
+    ul.menu-list.has-text-black
+      li
+        = link_to 'Posts', admin_posts_path, class: 'has-text-black'
+      li
+        = link_to 'Proyectos', admin_projects_path, class: 'has-text-black'
