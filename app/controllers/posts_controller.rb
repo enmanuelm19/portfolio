@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show]
   def index
-    @posts = Post.all
+    @q = Post.ransack(query_params)
+    @posts = @q.result
   end
 
   def show; end

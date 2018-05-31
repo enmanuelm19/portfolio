@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: :show
   def index
-    @projects = Project.all
+    @q = Project.ransack(query_params)
+    @projects = @q.result
   end
 
   def show; end

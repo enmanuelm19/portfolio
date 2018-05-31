@@ -3,12 +3,12 @@ section.hero.is-info.is-medium.is-bold
     .container.has-text-centered
       h1.title
         | Posts
-      .field.has-addons
-        .control.is-expanded
-          input.input.is-rounded placeholder='Buscar...'
-        .control
-          a.button.is-info
-            | Buscar
+      = search_form_for @q do |f|
+        .field.has-addons
+          .control.is-expanded
+            = f.search_field :title_cont, class: 'input is-rounded', placeholder: 'Buscar...'
+          .control
+            = f.submit 'Buscar', class: 'button is-info is-rounded'
 
 .container.is-fluid
   div.articles

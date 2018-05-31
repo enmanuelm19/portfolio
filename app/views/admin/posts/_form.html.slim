@@ -11,8 +11,15 @@
     label.label Contenido
     .control
       = f.text_area :content, class: 'textarea'
+  .field
+    .control
+      label.label
+        = f.check_box :published, style: 'marging-right: 5px;'
+        |    Publicar?
   .field.is-grouped.is-grouped-right
     .control
       = f.submit 'Guardar', class: 'button is-primary is-outlined'
     .control
       = link_to 'Cancelar', admin_posts_path, class: 'button is-danger is-outlined'
+javascript:
+  var simplemde = new SimpleMDE();

@@ -1,7 +1,8 @@
 class Admin::ProjectsController < Admin::AdminController
   before_action :set_project, only: %i[edit update destroy show]
   def index
-    @projects = Project.all
+    @q = Project.search(query_params)
+    @projects = @q.result
   end
 
   def new
@@ -42,6 +43,6 @@ class Admin::ProjectsController < Admin::AdminController
     end
 
     def project_params
-      params.require(:project).permit(:title, :description, :user_id)
+      params.require(:project).permit(:title, :description, :user_id, :published)
     end
 end

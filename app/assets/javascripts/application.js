@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require simplemde.min
 //= require_tree .
 
 function closeNotification(){

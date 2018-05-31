@@ -10,7 +10,14 @@ section.box
     .column.is-1
       = link_to 'Nuevo', new_admin_post_path, class: 'button is-primary is-outlined'
     .column.is-11
-      input.input.is-rounded placeholder="Buscar..."
+      = search_form_for @q, url: admin_posts_path do |f|
+        .field.has-addons
+          .control.is-expanded.has-icons-left
+            = f.search_field :title_cont, class: 'input is-rounded', placeholder: 'Buscar ...'
+            span.icon.is-small.is-left
+              i.fa.fa-search
+          .control
+            = f.submit 'Buscar', class: 'button is-primary is-rounded'
     - @posts.each do |post|
       .column.is-4
         .card

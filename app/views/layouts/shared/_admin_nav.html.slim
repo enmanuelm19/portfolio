@@ -11,14 +11,9 @@ nav.navbar
       .navbar-end
         .navbar-item.has-dropdown.is-hoverable
           a.navbar-link
-            | Account
+            | Cuenta
           .navbar-dropdown
-            a.navbar-item
-              | Dashboard
-            a.navbar-item
-              | Profile
-            a.navbar-item
-              | Settings
+            = link_to 'Dashboard', root_path, class: 'navbar-item'
             hr.navbar-divider/
             .navbar-item
-              = link_to('Cerrar sesión', destroy_user_session_path, method: :delete)
+              = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete

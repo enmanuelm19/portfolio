@@ -10,26 +10,8 @@ nav.navbar
     #navbarMenu.navbar-menu
       .navbar-end
         a.navbar-item.is-active
-          | Home
+          | Inicio
         = link_to 'Posts', posts_path, class: 'navbar-item'
+        = link_to 'Proyectos', projects_path, class: 'navbar-item'
         a.navbar-item
-          | Features
-        a.navbar-item
-          | Team
-        a.navbar-item
-          | Archives
-        a.navbar-item
-          | Help
-        .navbar-item.has-dropdown.is-hoverable
-          a.navbar-link
-            | Account
-          .navbar-dropdown
-            a.navbar-item
-              | Dashboard
-            a.navbar-item
-              | Profile
-            a.navbar-item
-              | Settings
-            hr.navbar-divider/
-            .navbar-item
-              | Logout
+          | Contacto

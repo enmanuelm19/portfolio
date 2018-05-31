@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'admin/posts#index', as: :root
+      root 'admin/dashboard#index', as: :root
     end
 
     unauthenticated do
