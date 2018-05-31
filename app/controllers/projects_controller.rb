@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: :show
   def index
-    @q = Project.ransack(query_params)
+    @q = Project.published_projects.ransack(query_params)
     @projects = @q.result
   end
 
