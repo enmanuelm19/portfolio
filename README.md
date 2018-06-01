@@ -1,24 +1,51 @@
-# README
+# Mi Portafolio
+---
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este proyecto es un aplicativo web para mi portafolio, también servira de blog y recordatorio, y por supuesto mi propia sala de juegos para experimentar herramientas.
 
-Things you may want to cover:
+#### Dependencias y herramientas
+---
 
-* Ruby version
+  1. Ruby 2.5.0
+  2. Rails 5.2.0
+  3. PostgreSQL 9.6+
 
-* System dependencies
+  * Devise
+  * Rspec
+  * FactoryBot
+  * ShouldaMatchers
+  * Ransack
+  * RedCarpet
+  * BulmaRails
 
-* Configuration
+#### Secciones y funcionalidades
+---
 
-* Database creation
+  * Administrar Posts
+  * Administrar Proyectos
 
-* Database initialization
+#### Por hacer
+---
 
-* How to run the test suite
+  * Formulario de contacto
+  * Comentarios(Disqus)
+  * Configurar y subir a DO con capistrano
 
-* Services (job queues, cache servers, search engines, etc.)
+  * ###### Por diversión:
+  ---
+    * Ambiente de desarrollo con Docker
+    * Ambiente de producción con Docker (standar mode)
+    * Ambiente de producción con Docer (swarm mode)(Ya se que no tiene ningún sentido por que es un monolito y no esta estructurado como microservicios)
+    * Convertir el aplicativo en PWA
 
-* Deployment instructions
+#### Segunda versión
+---
 
-* ...
+> Tengo planificado en un futuro convertirlo en un cms, para que sea una plataforma útil para mis esposa(Analista QA) y para mi (Y para el que quiera tener su portafolio).
+
+  * Configurar permisos (cancancan, pundit o rolify)
+  * Administrar usuarios
+  * Diseño del sistema (Logotipo, Interfaz)
+  * Desplegar en AWS
+
+

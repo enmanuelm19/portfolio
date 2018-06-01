@@ -89,6 +89,29 @@ RSpec.describe Admin::PostsController, type: :controller do
         @resource = post.reload
       end
       it_behaves_like 'successful update', 'AdminPosts', 'title', 'edited'
+      it_behaves_like 'unsuccessful update', :post, FactoryBot.attributes_for(:invalid_post)
+    end
+  end
+
+  describe 'DELTE destroy' do
+    context 'when user is not signed in' do
+      before do
+        delete :destroy, params: { id: 1 }
+      end
+      it_behaves_like 'unauthenticated'
+    end
+
+    context 'when user is signed in' do
+      before do
+        sign_in(user, scope: :user)
+      end
+
+      it 'destroy the project' do
+        post = FactoryBot.create(:post)
+        expect {
+          delete :destroy, params: { id: post.to_param }
+        }.to change(Post, :count).by(-1)
+      end
     end
   end
 end
