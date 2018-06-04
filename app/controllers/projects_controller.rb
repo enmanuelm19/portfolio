@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: :show
   def index
     @q = Project.published_projects.ransack(query_params)
-    @projects = @q.result
+    @projects = @q.result.page(params[:page])
   end
 
   def show; end

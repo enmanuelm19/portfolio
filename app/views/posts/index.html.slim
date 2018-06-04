@@ -28,3 +28,4 @@ section.hero.is-info.is-medium.is-bold
                       span.tag.is-rounded = "#{post.created_at}"
                 .content.article-body
                   = parse_content(truncate(post.content, length: 75))
+    = paginate @posts

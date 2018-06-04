@@ -39,3 +39,4 @@ section.box
             = link_to 'Ver', admin_post_path(post), class: 'card-footer-item'
             = link_to 'Editar', edit_admin_post_path(post), class: 'card-footer-item'
             = link_to 'Eliminar', admin_post_path(post), class: 'card-footer-item', method: :delete, data: { confirm: '¿Estas seguro?' }
+  = paginate @posts

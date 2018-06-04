@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
   def index
     @q = Post.published_posts.ransack(query_params)
-    @posts = @q.result
+    @posts = @q.result.page(params[:page])
   end
 
   def show; end

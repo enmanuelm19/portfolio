@@ -8,34 +8,34 @@ section.hero.is-info.welcome.is-small
   .hero-body
     .container
       h1.title
-        | Hello, Admin.
+        | Hello, Enmanuel.
       h2.subtitle
-        | I hope you are having a great day!
+        | Que tengas un gran día.
 br
 section.info-tiles
   .tile.is-ancestor.has-text-centered
     .tile.is-parent
       article.tile.is-child.box
         p.title 439k
-        p.subtitle Users
+        p.subtitle Posts
     .tile.is-parent
       article.tile.is-child.box
         p.title 59k
-        p.subtitle Products
+        p.subtitle Proyectos
     .tile.is-parent
       article.tile.is-child.box
         p.title 3.4k
-        p.subtitle Open Orders
+        p.subtitle Posts sin publicar
     .tile.is-parent
       article.tile.is-child.box
         p.title 19
-        p.subtitle Exceptions
+        p.subtitle Proyectos sin publicar
 .columns
   .column.is-6
     .card.events-card
       header.card-header
         p.card-header-title
-          | Events
+          | Posts sin publicar
         a.card-header-icon aria-label=("more options") href="#" 
           span.icon
             i.fa.fa-angle-down aria-hidden="true" 
@@ -43,67 +43,20 @@ section.info-tiles
         .content
           table.table.is-fullwidth.is-striped
             tbody
-              tr
-                td width="5%" 
-                  i.fa.fa-bell-o
-                td Lorum ipsum dolem aire
-                td
-                  a.button.is-small.is-primary href="#"  Action
-              tr
-                td width="5%" 
-                  i.fa.fa-bell-o
-                td Lorum ipsum dolem aire
-                td
-                  a.button.is-small.is-primary href="#"  Action
-              tr
-                td width="5%" 
-                  i.fa.fa-bell-o
-                td Lorum ipsum dolem aire
-                td
-                  a.button.is-small.is-primary href="#"  Action
-              tr
-                td width="5%" 
-                  i.fa.fa-bell-o
-                td Lorum ipsum dolem aire
-                td
-                  a.button.is-small.is-primary href="#"  Action
-              tr
-                td width="5%" 
-                  i.fa.fa-bell-o
-                td Lorum ipsum dolem aire
-                td
-                  a.button.is-small.is-primary href="#"  Action
-              tr
-                td width="5%" 
-                  i.fa.fa-bell-o
-                td Lorum ipsum dolem aire
-                td
-                  a.button.is-small.is-primary href="#"  Action
-              tr
-                td width="5%" 
-                  i.fa.fa-bell-o
-                td Lorum ipsum dolem aire
-                td
-                  a.button.is-small.is-primary href="#"  Action
-              tr
-                td width="5%" 
-                  i.fa.fa-bell-o
-                td Lorum ipsum dolem aire
-                td
-                  a.button.is-small.is-primary href="#"  Action
-              tr
-                td width="5%" 
-                  i.fa.fa-bell-o
-                td Lorum ipsum dolem aire
-                td
-                  a.button.is-small.is-primary href="#"  Action
+              - @unpublished_posts.each do |up|
+                tr
+                  td width="5%" 
+                    i.fa.fa-bell-o
+                  td = "#{up.title}"
+                  td
+                    = link_to 'Editar', edit_admin_post_path(up), class: 'button is-small is-primary'
       footer.card-footer
-        a.card-footer-item href="#"  View All
+        = link_to 'Ver todos', admin_posts_path, class: 'card-footer-item'
   .column.is-6
     .card
       header.card-header
         p.card-header-title
-          | Inventory Search
+          | Sección para analytics
         a.card-header-icon aria-label=("more options") href="#" 
           span.icon
             i.fa.fa-angle-down aria-hidden="true" 
@@ -118,7 +71,7 @@ section.info-tiles
     .card
       header.card-header
         p.card-header-title
-          | User Search
+          | Sección para proyectos sin publicar
         a.card-header-icon aria-label=("more options") href="#" 
           span.icon
             i.fa.fa-angle-down aria-hidden="true" 

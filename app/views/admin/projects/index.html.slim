@@ -35,3 +35,4 @@ section.box
             = link_to 'Ver', admin_project_path(project), class: 'card-footer-item'
             = link_to 'Editar', edit_admin_project_path(project), class: 'card-footer-item'
             = link_to 'Eliminar', admin_project_path(project), class: 'card-footer-item', method: :delete, data: { confirm: '¿Estas seguro?' }
+  = paginate @projects

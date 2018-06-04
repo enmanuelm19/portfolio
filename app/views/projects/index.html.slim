@@ -24,6 +24,7 @@ section.hero.is-info.is-medium.is-bold
                 p.title = "#{project.title}"
                 .content
                   p = "#{project.description}"
+    = paginate @projects
 div#show-project.modal
   - unless @projects.length.zero?
     = render partial: 'show', locals: { project: @projects.first }
