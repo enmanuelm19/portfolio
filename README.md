@@ -27,9 +27,10 @@ Este proyecto es un aplicativo web para mi portafolio, también servira de blog 
 #### Por hacer
 ---
 
-  * Formulario de contacto
-  * Comentarios(Disqus)
-  * Configurar y subir a DO con capistrano
+  - [*] Formulario de contacto
+  - [ ] Configurar Mailgun
+  - [ ] Comentarios(Disqus)
+  - [ ] Configurar y subir a DO con capistrano
 
   * ###### Por diversión:
   ---
