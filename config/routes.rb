@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
+  post 'contact-me', to: 'messages#create', as: 'create_message'
   devise_for :users
 
   devise_scope :user do
