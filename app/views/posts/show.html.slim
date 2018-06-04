@@ -17,3 +17,4 @@ section.hero.is-info.is-medium.is-bold
                   span.tag.is-rounded = "#{@post.created_at}"
             .content
               = parse_content(@post.content)
+            = render partial: 'comments'
