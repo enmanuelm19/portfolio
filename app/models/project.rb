@@ -4,4 +4,5 @@ class Project < ApplicationRecord
   validates :title, :user, presence: true
 
   scope :published_projects, -> { where(published: true) }
+  scope :unpublished,-> { where.not(published: true) }
 end
