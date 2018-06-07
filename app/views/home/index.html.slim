@@ -15,23 +15,23 @@ section#contacto.hero.is-fullheight
           = notice
           = @message.errors.full_messages.join('.')
           .field
-            label.label Nombre
+            label.label = "#{t('activerecord.attributes.message.name')}"
             .control.has-icons-left.has-icons-right
-              = f.text_field :name, placeholder: 'Nombre', class: 'input'
+              = f.text_field :name, placeholder: "#{t('activerecord.attributes.message.name')}", class: 'input'
               span.icon.is-small.is-left
                 i.fa.fa-user
           .field
-            label.label Email
+            label.label = "#{t('activerecord.attributes.message.email')}"
             .control.has-icons-left.has-icons-right
-              = f.email_field :email, placeholder: 'Email', class: 'input'
+              = f.email_field :email, placeholder: "#{t('activerecord.attributes.message.email')}", class: 'input'
               span.icon.is-small.is-left
                 i.fa.fa-envelope
           .field
-            label.label Mensaje
+            label.label = "#{t('activerecord.attributes.message.body')}"
             .control
-              = f.text_area :body, placeholder: 'Mensaje', class: 'textarea'
+              = f.text_area :body, placeholder:"#{t('activerecord.attributes.message.body')}", class: 'textarea'
           .field.is-grouped
             .control
-              = f.submit 'Enviar', class: 'button is-link'
+              = f.submit "#{t('actions.send')}", class: 'button is-link'
             .control
-              = f.button 'Cancelar', type: :reset, class: 'button is-danger'
+              = f.button "#{t('actions.cancel')}", type: :reset, class: 'button is-danger'

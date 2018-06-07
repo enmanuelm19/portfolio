@@ -1,0 +1,79 @@
+es:
+  actions:
+    new: Nuevo
+    edit: Editar
+    show: Ver
+    destroy: Eliminar
+    save: Guardar
+    cancel: Cancelar
+    search: Buscar
+    log_out: Cerrar Sesión
+    send: Enviar
+    show_all: Ver todos
+  date:
+    abbr_day_names: [ Dom, Lun, Mar, Mié, Jue, Vie, Sab ]
+    abbr_month_names: [ ~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic ]
+    day_names: [ Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado ]
+    formats:
+      default: "%d/%m/%Y %H:%M"
+      short: "%d/%m/%Y"
+      long: "%d/%m/%Y %H:%M:%S"
+    month_names: [ ~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre ]
+    order:
+    - :day
+    - :month
+    - :year
+  menu:
+    home: Inicio
+    posts: Posts
+    projects: Proyectos
+    contact: Contacto
+    account: Cuenta
+    dashboard: Panel de control
+    general: General
+    administration: Administración
+  activerecord:
+    models:
+      post:
+        one: Post
+        other: Posts
+      project:
+        one: Proyecto
+        other: Proyectos
+      user:
+        one: Usuario
+        other: Usuarios
+    attributes:
+      post:
+        title: Título
+        content: Contenido
+        published: Publicado
+      project:
+        title: Título
+        description: Descripción
+        published: Publicado
+      user:
+        email: Correo
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+      message:
+        email: Correo
+        name: Nombre
+        body: Mensaje
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: no puede estar vacío
+            content:
+              blank: no puede estar vacío
+        project:
+          attributes:
+            title:
+              blank: no puede estar vacío
+    message_mailer:
+    contact_me:
+      subject: 'Mensaje desde portfolio'
+  dashboard:
+    without_publish: sin publicar

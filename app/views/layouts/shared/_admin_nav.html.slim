@@ -10,10 +10,9 @@ nav.navbar
     #navbarMenuAdmin.navbar-menu
       .navbar-end
         .navbar-item.has-dropdown.is-hoverable
-          a.navbar-link
-            | Cuenta
+          a.navbar-link = "#{t('menu.account')}"
           .navbar-dropdown
-            = link_to 'Dashboard', root_path, class: 'navbar-item'
+            = link_to "#{t('menu.dashboard')}", root_path, class: 'navbar-item'
             hr.navbar-divider/
             .navbar-item
-              = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete
+              = link_to "#{t('actions.log_out')}", destroy_user_session_path, method: :delete

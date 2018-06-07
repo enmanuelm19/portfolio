@@ -3,7 +3,7 @@ nav.breadcrumb aria-label="breadcrumbs"
     li
       a href="../"  Admin
     li.is-active
-      a.aria-current href="../"  Dashboard
+      a.aria-current href="../"  = "#{t('menu.dashboard')}"
 section.hero.is-info.welcome.is-small
   .hero-body.hero-body-contact
     .container
@@ -17,25 +17,24 @@ section.info-tiles
     .tile.is-parent
       article.tile.is-child.box
         p.title = "#{@post_count}"
-        p.subtitle Posts
+        p.subtitle = "#{t('activerecord.models.post.other')}"
     .tile.is-parent
       article.tile.is-child.box
         p.title = "#{@project_count}"
-        p.subtitle Proyectos
+        p.subtitle = "#{t('activerecord.models.project.other')}"
     .tile.is-parent
       article.tile.is-child.box
         p.title = "#{@unpublished_count}"
-        p.subtitle Posts sin publicar
+        p.subtitle = "#{t('activerecord.models.post.other')} #{t('dashboard.without_publish')}"
     .tile.is-parent
       article.tile.is-child.box
         p.title = "#{@unpublished_project_count}"
-        p.subtitle Proyectos sin publicar
+        p.subtitle = "#{t('activerecord.models.project.other')} #{t('dashboard.without_publish')}"
 .columns
   .column.is-6
     .card.events-card
       header.card-header
-        p.card-header-title
-          | Posts sin publicar
+        p.card-header-title = "#{t('activerecord.models.post.other')} #{t('dashboard.without_publish')}"
         a.card-header-icon aria-label=("more options") href="#" 
           span.icon
             i.fa.fa-angle-down aria-hidden="true" 
@@ -49,9 +48,9 @@ section.info-tiles
                     i.fa.fa-bell-o
                   td = "#{up.title}"
                   td
-                    = link_to 'Editar', edit_admin_post_path(up), class: 'button is-small is-primary'
+                    = link_to "#{t('actions.edit')}", edit_admin_post_path(up), class: 'button is-small is-primary'
       footer.card-footer
-        = link_to 'Ver todos', admin_posts_path, class: 'card-footer-item'
+        = link_to "#{t('actions.show_all')}", admin_posts_path, class: 'card-footer-item'
   .column.is-6
     .card
       header.card-header

@@ -1,14 +1,13 @@
 section.hero.is-info.is-medium.is-bold
   .hero-body.posts-presentation
     .container.has-text-centered
-      h1.title.has-text-primary
-        | Proyectos
+      h1.title.has-text-primary = "#{t('activerecord.models.project.other')}"
       = search_form_for @q do |f|
         .field.has-addons
           .control.is-expanded
-            = f.search_field :title_cont, class: 'input is-rounded', placeholder: 'Buscar...'
+            = f.search_field :title_cont, class: 'input is-rounded', placeholder: "#{t('actions.search')}..."
           .control
-            = f.submit 'Buscar', class: 'button is-info is-rounded'
+            = f.submit "#{t('actions.search')}", class: 'button is-info is-rounded'
 
 .container.is-fluid
   div.articles

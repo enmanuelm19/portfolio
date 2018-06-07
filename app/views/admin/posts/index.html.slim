@@ -1,23 +1,23 @@
 nav.breadcrumb aria-label="breadcrumbs" 
   ul
     li
-      = link_to 'Admin', admin_dashboard_path
+      = link_to "#{t('menu.dashboard')}", admin_dashboard_path
     li.is-active
-      a aria-current="page" href="#"  Posts
+      a aria-current="page" href="#" = "#{t('activerecord.models.post.other')}"
 br
 section.box
   .columns.is-multiline.is-desktop
     .column.is-1
-      = link_to 'Nuevo', new_admin_post_path, class: 'button is-primary is-outlined'
+      = link_to "#{t('actions.new')}", new_admin_post_path, class: 'button is-primary is-outlined'
     .column.is-11
       = search_form_for @q, url: admin_posts_path do |f|
         .field.has-addons
           .control.is-expanded.has-icons-left
-            = f.search_field :title_cont, class: 'input is-rounded', placeholder: 'Buscar ...'
+            = f.search_field :title_cont, class: 'input is-rounded', placeholder: "#{t('actions.search')}..."
             span.icon.is-small.is-left
               i.fa.fa-search
           .control
-            = f.submit 'Buscar', class: 'button is-primary is-rounded'
+            = f.submit "#{t('actions.search')}", class: 'button is-primary is-rounded'
     - @posts.each do |post|
       .column.is-4
         .card
@@ -36,7 +36,7 @@ section.box
               = truncate(post.content, length: 75)
               time = "#{post.created_at}"
           footer.card-footer
-            = link_to 'Ver', admin_post_path(post), class: 'card-footer-item'
-            = link_to 'Editar', edit_admin_post_path(post), class: 'card-footer-item'
-            = link_to 'Eliminar', admin_post_path(post), class: 'card-footer-item', method: :delete, data: { confirm: '¿Estas seguro?' }
+            = link_to "#{t('actions.show')}", admin_post_path(post), class: 'card-footer-item'
+            = link_to "#{t('actions.edit')}", edit_admin_post_path(post), class: 'card-footer-item'
+            = link_to "#{t('actions.destroy')}", admin_post_path(post), class: 'card-footer-item', method: :delete, data: { confirm: '¿Estas seguro?' }
   = paginate @posts

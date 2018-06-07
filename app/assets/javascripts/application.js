@@ -17,13 +17,10 @@
 //= require_tree .
 
 function closeNotification(){
-  var notification = document.getElementById('success_notification');
-  notification.remove(notification.selectedIndex);
-}
-
-function closeErro(){
-  var notification = document.getElementById('error_notification');
-  notification.remove(notification.selectedIndex);
+  var notifications = Array.from(document.getElementsByClassName('notification'));
+  notifications.forEach(function (item) {
+    item.remove(item.selectedIndex);
+  })
 }
 
 window.onload = function () {
