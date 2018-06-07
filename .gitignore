@@ -55,5 +55,6 @@ bower.json
 !.vscode/extensions.json
 .history
 
+config/master.key
 
 # End of https://www.gitignore.io/api/rails,visualstudiocode

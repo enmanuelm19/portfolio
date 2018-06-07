@@ -30,6 +30,8 @@ section#contacto.hero.is-fullheight
             label.label = "#{t('activerecord.attributes.message.body')}"
             .control
               = f.text_area :body, placeholder:"#{t('activerecord.attributes.message.body')}", class: 'textarea'
+          .field
+            = recaptcha_tags
           .field.is-grouped
             .control
               = f.submit "#{t('actions.send')}", class: 'button is-link'
