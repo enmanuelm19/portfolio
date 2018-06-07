@@ -1,24 +1,26 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  post 'contact-me', to: 'messages#create', as: 'create_message'
-  devise_for :users
+  scope "(:locale)", locale: /es|en/ do
+    get 'home/index'
+    post 'contact-me', to: 'messages#create', as: 'create_message'
+    devise_for :users
 
-  devise_scope :user do
-    authenticated :user do
-      root 'admin/dashboard#index', as: :root
+    devise_scope :user do
+      authenticated :user do
+        root 'admin/dashboard#index', as: :root
+      end
+
+      unauthenticated do
+        root 'home#index', as: :unauthenticated_root
+      end
     end
 
-    unauthenticated do
-      root 'home#index', as: :unauthenticated_root
+    namespace :admin do
+      resources :posts
+      resources :projects
+      get 'dashboard', to: 'dashboard#index'
     end
-  end
 
-  namespace :admin do
-    resources :posts
-    resources :projects
-    get 'dashboard', to: 'dashboard#index'
+    resources :posts, only: %i[index show]
+    resources :projects, only: %i[index show]
   end
-
-  resources :posts, only: %i[index show]
-  resources :projects, only: %i[index show]
 end

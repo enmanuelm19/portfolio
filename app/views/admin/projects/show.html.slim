@@ -1,11 +1,11 @@
 nav.breadcrumb aria-label="breadcrumbs" 
   ul
     li
-      = link_to 'Admin', admin_dashboard_path
+      = link_to "#{t('menu.dashboard')}", admin_dashboard_path
     li
-      = link_to 'Proyectos', admin_projects_path
+      = link_to "#{t('menu.projects')}", admin_projects_path
     li.is-active
-      a aria-current='page' href='#' Proyecto
+      a aria-current='page' href='#' = "#{t('activerecord.models.project.one')}"
 br
 section.container.is-fluid
   div

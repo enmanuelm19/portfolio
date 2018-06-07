@@ -2,20 +2,20 @@ section.hero.is-success.is-fullheight
   .hero-body
     .container.has-text-centered
       .column.is-4.is-offset-4
-        h3.title.has-text-white Inicio de Sesión
-        p.subtitle.has-text-white Inicia sesión para proceder.
+        h3.title.has-text-white = "#{t('devise.views.sign_in')}"
+        p.subtitle.has-text-white = "#{t('devise.views.sign_in_proceed')}"
         .box
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             .field
               .control
-                = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'input is-large'
+                = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "#{t('activerecord.attributes.user.email')}", class: 'input is-large'
             .field
-              = f.password_field :password, autocomplete: "off", placeholder: 'Contraseña', class: 'input is-large'
+              = f.password_field :password, autocomplete: "off", placeholder: "#{t('activerecord.attributes.user.password')}", class: 'input is-large'
             - if devise_mapping.rememberable?
               .field
                 label.checkbox
                   = f.check_box :remember_me
-                  = f.label :remember_me
+                  label = "  #{t('devise.views.remember_me')}"
             .actions
-              = f.submit "Iniciar", class: 'button is-block is-info is-large is-fullwidth'
+              = f.submit "#{t('devise.views.submit')}", class: 'button is-block is-info is-large is-fullwidth'
         = render "devise/shared/links"

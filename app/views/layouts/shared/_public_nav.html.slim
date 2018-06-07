@@ -9,8 +9,13 @@ nav.navbar
         span aria-hidden="true"
     #navbarMenu.navbar-menu
       .navbar-end
-        = link_to 'Inicio', root_path, class: 'navbar-item'
-        = link_to 'Posts', posts_path, class: 'navbar-item'
-        = link_to 'Proyectos', projects_path, class: 'navbar-item'
-        a.navbar-item href="#contacto"
-          | Contacto
+        = link_to "#{t('menu.home')}", root_path, class: 'navbar-item'
+        = link_to "#{t('menu.posts')}", posts_path, class: 'navbar-item'
+        = link_to "#{t('menu.projects')}", projects_path, class: 'navbar-item'
+        = link_to "#{t('menu.contact')}", root_path(anchor: 'contacto'), class: 'navbar-item'
+        = link_to root_path(locale: :es), class: 'navbar-item' do
+          .icon
+            = image_tag "Venezuela-Flag-icon.png"
+        = link_to root_path(locale: :en), class: 'navbar-item' do
+          .icon
+            = image_tag "England-Flag-icon.png"
