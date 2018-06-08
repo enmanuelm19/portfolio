@@ -10,6 +10,7 @@ es:
     log_out: Cerrar Sesión
     send: Enviar
     show_all: Ver todos
+    share: Compartir
   date:
     abbr_day_names: [ Dom, Lun, Mar, Mié, Jue, Vie, Sab ]
     abbr_month_names: [ ~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic ]
