@@ -10,6 +10,7 @@ en:
     log_out: Log out
     send: Send
     show_all: Show all
+    share: Share
   date:
     abbr_day_names: [ Sun, Mon, Tue, Wed, Thu, Fri, Sat ]
     abbr_month_names: [ ~, Jan, Feb, Mar, Apr, May, June, Jul, Aug, Sep, Oct, Nov, Dic ]
