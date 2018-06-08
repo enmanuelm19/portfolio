@@ -49,6 +49,7 @@ en:
         title: Title
         content: Content
         published: Published
+        header_image: Header image
       project:
         title: Title
         description: Description

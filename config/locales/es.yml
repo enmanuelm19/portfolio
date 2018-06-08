@@ -49,6 +49,7 @@ es:
         title: Título
         content: Contenido
         published: Publicado
+        header_image: Imágen principal
       project:
         title: Título
         description: Descripción
