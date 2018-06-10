@@ -19,7 +19,10 @@ section.hero.is-info.is-medium.is-bold
               .card-content
                 .media
                   .media-center
-                    img.author-image alt=("Placeholder image") src="http://www.radfaces.com/images/avatars/daria-morgendorffer.jpg" /
+                    - if post.header_image.attached?
+                      = image_tag(post.header_image, class: 'author-image')
+                    - else
+                      img.author-image alt=("Placeholder image") src="http://www.radfaces.com/images/avatars/daria-morgendorffer.jpg" /
                   .media-content.has-text-centered
                     p.title.article-title = "#{post.title}"
                     .tags.has-addons.level-item

@@ -13,6 +13,12 @@
       = f.text_area :description, class: 'textarea'
   .field
     .control
+      label.label = "#{t('activerecord.attributes.post.header_image')}"
+      .button.is-outlined.btn-file
+        = "#{t('actions.choose_file')}"
+        = f.file_field :header_image, direct_upload: true
+  .field
+    .control
       label.label
         = f.check_box :published, style: 'marging-right: 5px;'
         = "  #{t('activerecord.attributes.project.published')}?"
