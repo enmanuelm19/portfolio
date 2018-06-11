@@ -11,6 +11,7 @@ es:
     send: Enviar
     show_all: Ver todos
     share: Compartir
+    choose_file: Escoger archivo
   date:
     abbr_day_names: [ Dom, Lun, Mar, Mié, Jue, Vie, Sab ]
     abbr_month_names: [ ~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic ]
@@ -49,6 +50,7 @@ es:
         title: Título
         content: Contenido
         published: Publicado
+        header_image: Imágen principal
       project:
         title: Título
         description: Descripción

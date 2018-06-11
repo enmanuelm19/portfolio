@@ -11,6 +11,7 @@ en:
     send: Send
     show_all: Show all
     share: Share
+    choose_file: Choose file
   date:
     abbr_day_names: [ Sun, Mon, Tue, Wed, Thu, Fri, Sat ]
     abbr_month_names: [ ~, Jan, Feb, Mar, Apr, May, June, Jul, Aug, Sep, Oct, Nov, Dic ]
@@ -49,6 +50,7 @@ en:
         title: Title
         content: Content
         published: Published
+        header_image: Header image
       project:
         title: Title
         description: Description
