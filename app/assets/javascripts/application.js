@@ -22,10 +22,3 @@ function closeNotification(){
     item.remove(item.selectedIndex);
   })
 }
-
-window.onload = function () {
-  var typed = new Typed("#home-description", {
-    strings: ['Soy Ingeniero Informático', 'Desarrollador Web', 'Fan del Chelsea F.C', "I'm a Software Engineer",  "Chelsea F.C fan", "Web Developer"],
-    typeSpeed: 20
-  })
-}
