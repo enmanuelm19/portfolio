@@ -37,3 +37,10 @@ section#contacto.hero.is-fullheight
               = f.submit "#{t('actions.send')}", class: 'button is-link'
             .control
               = f.button "#{t('actions.cancel')}", type: :reset, class: 'button is-danger'
+javascript:
+  window.onload = function () {
+    var typed = new Typed("#home-description", {
+      strings: ['Soy Ingeniero Informático', 'Desarrollador Web', 'Fan del Chelsea F.C', "I'm a Software Engineer",  "Chelsea F.C fan", "Web Developer"],
+      typeSpeed: 20
+    })
+  }

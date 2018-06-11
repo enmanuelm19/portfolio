@@ -24,7 +24,7 @@ set :rvm_ruby_version, '2.5.0'
 
 set :branch,        :master
 
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/master.key}
 set :linked_dirs,  %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads public/assets}
 
 namespace :puma do
