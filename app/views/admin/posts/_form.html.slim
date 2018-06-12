@@ -20,6 +20,11 @@
   br
   .field
     .control
+      label.label = "#{t('activerecord.attributes.post.locale')}"
+      .select
+        = f.select :locale, Post.locales.keys
+  .field
+    .control
       label.label
         = f.check_box :published, style: 'marging-right: 5px;'
         = "  #{t('activerecord.attributes.post.published')}?"

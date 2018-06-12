@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
   def query_params
     params[:q]
   end
+
+  def locale_param 
+    %w[es en].include?(params[:locale]) ? params[:locale] : 'es'
+  end
 end
