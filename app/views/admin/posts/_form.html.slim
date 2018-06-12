@@ -22,7 +22,7 @@
     .control
       label.label = "#{t('activerecord.attributes.post.locale')}"
       .select
-        = f.select :locale, Post.locales
+        = f.select :locale, Post.locales.keys
   .field
     .control
       label.label

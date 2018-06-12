@@ -19,6 +19,11 @@
         = f.file_field :header_image, direct_upload: true
   .field
     .control
+      label.label = "#{t('activerecord.attributes.post.locale')}"
+      .select
+        = f.select :locale, Project.locales.keys 
+  .field
+    .control
       label.label
         = f.check_box :published, style: 'marging-right: 5px;'
         = "  #{t('activerecord.attributes.project.published')}?"
