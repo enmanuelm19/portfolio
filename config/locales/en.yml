@@ -51,7 +51,8 @@ en:
         content: Content
         published: Published
         header_image: Header image
-      project:
+        locale: Language
+        project:
         title: Title
         description: Description
         published: Published
