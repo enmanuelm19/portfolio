@@ -30,10 +30,10 @@ section.box
           .card-content
             .media
               .media-content
-                p.title.is-4 = "#{project.user.email}"
-                p.subtitle.is-6 Twitter
+                p.title.is-4 = "#{project.title}"
+                p.subtitle.is-6 = "#{project.user.email}"
             .content
-              = truncate(project.description, length: 75)
+              = truncate(parse_content(project.description), length: 75)
           footer.card-footer
             = link_to "#{t('actions.show')}", admin_project_path(project), class: 'card-footer-item'
             = link_to "#{t('actions.edit')}", edit_admin_project_path(project), class: 'card-footer-item'

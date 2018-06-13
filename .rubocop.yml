@@ -11,3 +11,5 @@ Metrics/BlockLength:
   Max: 60
 Layout/IndentationConsistency:
   EnforcedStyle: rails
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
