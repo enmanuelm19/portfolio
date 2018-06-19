@@ -25,7 +25,7 @@ section.hero.is-info.is-medium.is-bold
               .card-content
                 p.title = "#{project.title}"
                 .content
-                  = truncate(project.description, length: 150)
+                  = parse_content(truncate(project.description, length: 150))
     = paginate @projects
 div#show-project.modal
   - unless @projects.length.zero?
