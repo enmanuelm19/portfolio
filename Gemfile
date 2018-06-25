@@ -22,6 +22,7 @@ gem 'rouge'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
 gem 'simplemde-rails'
+gem 'sitemap_generator'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
