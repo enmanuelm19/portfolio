@@ -14,7 +14,7 @@ section.hero.is-info.is-medium.is-bold
     .columns.is-multiline.is-desktop
       - @posts.each do |post|
         .column.is-one-third-widescreen.is-12-mobile
-          = link_to post do
+          = link_to post, rel: 'nofollow' do
             .card.article
               .card-content
                 .media
