@@ -5,11 +5,24 @@ class PostsController < ApplicationController
     @posts = @q.result.page(params[:page])
   end
 
-  def show; end
+  def show
+    @meta_title = meta_title @post.title
+    @meta_description = @post.title
+    set_og_properties
+  end
 
   private
 
   def set_post
     @post = Post.friendly.find(params[:id])
+  end
+
+  def set_og_properties
+    @og_properties = {
+      title: @post.title,
+      type: 'website',
+      image: rails_blob_url(@post.header_image),
+      url: url_for(@post)
+    }
   end
 end
