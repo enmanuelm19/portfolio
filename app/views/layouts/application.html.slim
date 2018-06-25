@@ -3,7 +3,12 @@ html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     meta name="viewport" content="width=device-width, initial-scale=1"
-    title Enmanuel
+    title = "#{@meta_title || ApplicationController::BRAND_NAME}" 
+    - if @meta_description.present?
+      meta name="description" content="#{@meta_description}"
+    
+    - if @og_properties.present?
+      = meta_og_tags @og_properties
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
