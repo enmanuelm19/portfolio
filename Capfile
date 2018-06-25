@@ -5,6 +5,7 @@ require "capistrano/bundler"
 require "capistrano/rvm"
 require 'capistrano/puma'
 require "capistrano/scm/git"
+require 'capistrano/sitemap_generator'
 install_plugin Capistrano::SCM::Git
 install_plugin Capistrano::Puma
 
