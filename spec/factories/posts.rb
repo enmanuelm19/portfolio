@@ -3,6 +3,7 @@ FactoryBot.define do
     title { FFaker::Book.title }
     content { FFaker::Lorem.paragraph }
     user_id { User.last&.id || FactoryBot.create(:user).id }
+    locale 'es'
     after(:build) do |post|
       post.header_image.attach(io: File.open(Rails.root.join('public', 'apple-touch-icon.png')), filename: 'apple-touch-icon.png', content_type: 'image/png')
     end
