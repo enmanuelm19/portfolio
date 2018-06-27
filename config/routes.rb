@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  scope "(:locale)", locale: /es|en/ do
+  scope "(:locale)", locale: /es|en/, defaults: {locale: 'es'} do
     get 'home/index'
     post 'contact-me', to: 'messages#create', as: 'create_message'
-    devise_for :users
+    devise_for :users, skip: :registration
 
     devise_scope :user do
       authenticated :user do

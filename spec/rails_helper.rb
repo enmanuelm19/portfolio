@@ -7,6 +7,7 @@ require 'devise'
 
 ActiveRecord::Migration.maintain_test_schema!
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+include SessionHelpers
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -31,6 +32,19 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
+
+  config.include Warden::Test::Helpers
+
+  Capybara.register_driver :selenium do |app|
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
+  end
+
+  Capybara.javascript_driver = :selenium
+
+  Capybara.configure do |config|
+    config.default_max_wait_time = 15
+    config.default_driver = :selenium
+  end
 end
 
 Shoulda::Matchers.configure do |config|
@@ -39,3 +53,4 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
