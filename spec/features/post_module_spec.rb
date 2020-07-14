@@ -11,7 +11,7 @@ RSpec.describe 'Post module', js: true do
   feature 'Show specific post' do
     scenario 'user goes to specific post' do
       post = FactoryBot.create(:post)
-      visit post_path(post.id)
+      visit post_path(id: post.id)
       expect(page).to have_text(post.title)
     end
   end
