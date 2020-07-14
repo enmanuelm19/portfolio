@@ -32,16 +32,18 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { address: 'mailcatcher', port: 1025 }
   # SMTP settings for mailgun
-  ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => "smtp.mailgun.org",
-    :domain         => Rails.application.credentials.mailgun[:domain],
-    :user_name      => Rails.application.credentials.mailgun[:username],
-    :password       => Rails.application.credentials.mailgun[:password],
-    :authentication => :plain,
-  }
 
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => 587,
+  #   :address        => "smtp.mailgun.org",
+  #   :domain         => Rails.application.credentials.mailgun[:domain],
+  #   :user_name      => Rails.application.credentials.mailgun[:username],
+  #   :password       => Rails.application.credentials.mailgun[:password],
+  #   :authentication => :plain,
+  # }
+  #
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

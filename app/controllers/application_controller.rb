@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  BRAND_NAME = 'Enmanuel'.freeze
+  BRAND_NAME = 'Enmanuel Medina'.freeze
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     params[:q]
   end
 
-  def locale_param 
+  def locale_param
     %w[es en].include?(params[:locale]) ? params[:locale] : 'es'
   end
 

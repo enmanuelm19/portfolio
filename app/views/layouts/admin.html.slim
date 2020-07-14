@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title = "#{@meta_title || ApplicationController::BRAND_NAME}" 
+    meta name="description" content="Blog de tecnología y vida de Enmanuel Medina"
+
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body class="dashboard"
+    = render partial: 'layouts/shared/admin_nav'
+    br
+    .container.is-fluid
+      .columns
+        .column.is-3
+          = render partial: 'layouts/shared/admin_menu'
+        .column.is-9
+          = render partial: 'layouts/shared/messages'
+          = yield
+javascript:
+  (function() {
+    var burger = document.querySelector('.burger');
+    var menu = document.querySelector('#'+burger.dataset.target);
+    burger.addEventListener('click', function() {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+    });
+  })();

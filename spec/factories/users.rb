@@ -5,7 +5,7 @@ FactoryBot.define do
     password_confirmation { 'password' }
 
     factory :invalid_user do
-      email nil
+      email { nil }
     end
   end
 end

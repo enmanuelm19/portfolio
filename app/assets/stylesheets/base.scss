@@ -1,0 +1,132 @@
+:root {
+  --primary: #00d1b2;
+  --link: #3273dc;
+  --info: #3298dc;
+  --success: #48c774;
+  --warning: #ffdd57;
+  --danger: #f14668;
+  --white: #f2f2f2;
+  --black: #0a0a0a;
+  --light: whitesmoke;
+  --dark: #363636;
+  --soft-black: #4a4a4a;
+  --background-item: #f0f2f4;
+}
+
+[data-theme=dark] {
+   --light: #363636;
+   --dark: whitesmoke;
+   --black: #f2f2f2;
+   --white: #0a0a0a;
+   --soft-black: whitesmoke;
+   --background-item: #375a7f;
+}
+
+html,body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  background: var(--background-item);
+}
+.navbar.is-white {
+  background: var(--background-item);
+}
+.navbar-brand .brand-text {
+  font-size: 1.11rem;
+  font-weight: bold;
+}
+.hero-body{
+  background-image: url(https://i.imgur.com/O85Bccc.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+.articles {
+  margin: 5rem 0;
+  margin-top: -200px;
+}
+.articles .content p {
+    line-height: 1.9;
+    margin: 15px 0;
+}
+.author-image {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: -60px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+}
+.media-center {
+  display: block;
+  margin-bottom: 1rem;
+}
+.media-content {
+  margin-top: 3rem;
+}
+.article, .promo-block {
+  margin-top: 6rem;
+}
+div.column.is-8:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}
+.article-title {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 2;
+}
+.article-subtitle {
+  color: #909AA0;
+  margin-bottom: 3rem;
+}
+.article-body {
+  line-height: 1.4;
+  margin: 0 6rem;
+}
+.promo-block .container {
+  margin: 1rem 5rem;
+}
+
+.dashboard {
+  background-image: url(https://i.imgur.com/O85Bccc.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+.avatar {
+  margin-top: -30px;
+  padding-bottom: 20px;
+}
+.avatar img {
+  padding: 5px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+}
+.hero-body-contact {
+  background-image: url(https://i.imgur.com/imBRDBd.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}

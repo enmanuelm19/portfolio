@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.0'
+ruby '2.6.5'
 
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bulma-rails', '~> 0.7.1'
+gem 'bulma-rails', '~> 0.9.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'font-awesome-rails'
@@ -15,7 +15,7 @@ gem 'kaminari'
 gem 'pg', '~> 0.20'
 gem 'puma', '~> 3.11'
 gem 'recaptcha', require: 'recaptcha/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 6.0.3'
 gem 'ransack'
 gem 'redcarpet'
 gem 'rouge'
@@ -35,6 +35,7 @@ end
 group :development do
   gem 'bullet'
   gem 'capistrano',         require: false
+  gem 'capistrano-db-tasks', require: false
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false

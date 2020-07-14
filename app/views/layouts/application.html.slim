@@ -6,7 +6,9 @@ html
     title = "#{@meta_title || ApplicationController::BRAND_NAME}" 
     - if @meta_description.present?
       meta name="description" content="#{@meta_description}"
-    
+    - else
+      meta name="description" content="Blog de tecnología y vida de Enmanuel Medina"
+
     - if @og_properties.present?
       = meta_og_tags @og_properties
     = csrf_meta_tags
@@ -22,11 +24,9 @@ html
 
            ga('create', 'UA-121049309-1', 'auto');
            ga('send', 'pageview');
-  body class="#{'dashboard' if user_signed_in?}"
-    - if  user_signed_in?
-      = render partial: 'layouts/admin'
-    - else
-      = render partial: 'layouts/public'
+  body
+    = render partial: 'layouts/shared/public_nav'
+    = yield
 javascript:
   (function() {
     var burger = document.querySelector('.burger');

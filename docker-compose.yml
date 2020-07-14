@@ -1,0 +1,34 @@
+version: '3.3'
+
+volumes:
+  database:
+
+services:
+  rails:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app/
+    command: >
+      bash -c "tail -f /dev/null"
+    ports:
+      - '5000:3000'
+    depends_on:
+      - postgresql
+    restart: always
+  postgresql:
+    image: postgres:11.0-alpine
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5433:5432'
+    volumes:
+      - database:/var/lib/postgresql/data
+  mailcatcher:
+    image: yappabe/mailcatcher
+    ports:
+      - 1025:1025
+      - 1080:1080
