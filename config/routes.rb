@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       end
     end
 
+    get '/mode', to: 'application#set_dark_mode'
+
     namespace :admin do
       resources :posts
       resources :projects

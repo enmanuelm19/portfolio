@@ -21,4 +21,10 @@ class ApplicationController < ActionController::Base
   def meta_title(title)
     [title, BRAND_NAME].reject(&:empty?).join(' | ')
   end
+
+  def set_dark_mode
+    mode = params[:mode] || 'dark'
+    cookies[:mode] = { value: mode }
+    redirect_back(fallback_location: root_path)
+  end
 end

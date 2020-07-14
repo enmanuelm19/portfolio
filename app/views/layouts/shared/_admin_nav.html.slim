@@ -13,6 +13,12 @@ nav.navbar
           a.navbar-link = "#{t('menu.account')}"
           .navbar-dropdown
             = link_to "#{t('menu.dashboard')}", root_path, class: 'navbar-item'
+            - if cookies[:mode] && cookies[:mode] == 'dark'
+              = link_to mode_path(mode: 'light'), class: 'navbar-item' do
+                i.fa.fa-adjust
+            - else
+              = link_to mode_path(mode: 'dark'), class: 'navbar-item' do
+                i.fa.fa-adjust
             hr.navbar-divider/
             .navbar-item
               = link_to "#{t('actions.log_out')}", destroy_user_session_path, method: :delete

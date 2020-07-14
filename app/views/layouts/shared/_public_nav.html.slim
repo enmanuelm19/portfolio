@@ -19,3 +19,9 @@ nav.navbar
         = link_to root_path(locale: :en), class: 'navbar-item' do
           .icon
             = image_tag "England-Flag-icon.png"
+        - if cookies[:mode] && cookies[:mode] == 'dark'
+          = link_to mode_path(mode: 'light'), class: 'navbar-item' do
+            i.fa.fa-adjust
+        - else
+          = link_to mode_path(mode: 'dark'), class: 'navbar-item' do
+            i.fa.fa-adjust
