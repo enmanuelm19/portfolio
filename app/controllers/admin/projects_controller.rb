@@ -1,7 +1,7 @@
 class Admin::ProjectsController < Admin::AdminController
   before_action :set_project, only: %i[edit update destroy show]
   def index
-    @q = Project.search(query_params)
+    @q = Project.ransack(query_params)
     @projects = @q.result.page(params[:page])
   end
 
