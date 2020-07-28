@@ -13,6 +13,8 @@ html
       = meta_og_tags @og_properties
     = csrf_meta_tags
     = csp_meta_tag
+    script src="https://kit.fontawesome.com/45f8727c41.js" crossorigin="anonymous"
+    link rel="preload" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" as="style"
     - if cookies[:mode] && cookies[:mode] == 'dark'
       = stylesheet_link_tag 'application_dark', media: 'all', 'data-turbolinks-track': 'reload'
     - else

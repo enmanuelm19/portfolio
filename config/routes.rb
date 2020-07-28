@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /es|en/ do
-    get 'home/index'
     post 'contact-me', to: 'messages#create', as: 'create_message'
     devise_for :users, skip: :registration
 

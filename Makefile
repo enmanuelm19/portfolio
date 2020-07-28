@@ -13,13 +13,13 @@ run_all:
 run:
 	docker-compose -p portfolio up -d rails postgresql
 run_mailcatcher:
-	docker-compose -p bci_solutions up -d mailcatcher
+	docker-compose -p portfolio up -d mailcatcher
 start_all:
 	@docker-compose -p portfolio up --no-recreate
 start:
 	@docker-compose -p portfolio up -d --no-recreate  rails postgresql
 stop:
-	@docker-compose -p porrtfolio stop
+	@docker-compose -p portfolio stop
 clean:
 	@docker-compose -p portfolio down
 clean_volumes:

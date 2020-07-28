@@ -20,8 +20,8 @@ nav.navbar
           .icon
             = image_tag "England-Flag-icon.png"
         - if cookies[:mode] && cookies[:mode] == 'dark'
-          = link_to mode_path(mode: 'light'), class: 'navbar-item' do
-            i.fa.fa-adjust
+          = link_to mode_path(mode: 'light'), class: 'navbar-item', data: { turbolinks: 'false' } do
+            i.fas.fa-adjust
         - else
-          = link_to mode_path(mode: 'dark'), class: 'navbar-item' do
+          = link_to mode_path(mode: 'dark'), class: 'navbar-item', data: { turbolinks: 'false' } do
             i.fa.fa-adjust
