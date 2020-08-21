@@ -18,7 +18,7 @@
 @import "simplemde.min";
 
 .dashboard {
-  background-image: url(/assets/O85Bccc.webp);
+  background-image: image-url('O85Bccc.webp');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -34,7 +34,7 @@
   box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
 }
 .hero-body-contact {
-  background-image: url(https://i.imgur.com/imBRDBd.jpg);
+  background-image: image-url('imBRDBd.webp');
   background-size: cover;
   background-repeat: no-repeat;
 }
