@@ -31,7 +31,10 @@ section#contacto.hero.is-fullheight
             .control
               = f.text_area :body, placeholder:"#{t('activerecord.attributes.message.body')}", class: 'textarea'
           .field
-            = recaptcha_tags
+            - if cookies[:mode] && cookies[:mode] == 'dark'
+              = recaptcha_tags theme: 'dark'
+            - else
+              = recaptcha_tags
           .field.is-grouped
             .control
               = f.submit "#{t('actions.send')}", class: 'button is-link'

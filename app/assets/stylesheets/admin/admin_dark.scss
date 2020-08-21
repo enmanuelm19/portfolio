@@ -12,41 +12,12 @@
  *
  *= require_self
  */
+@import "../dark/*";
 @import "bulma";
-@import "./home";
-@import "./posts";
-.avatar {
-  margin-top: -30px;
-  padding-bottom: 20px;
-}
-.avatar img {
-  padding: 5px;
-  background: #fff;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-}
-.hero-body-contact {
-  background-image: image-url('imBRDBd.webp');
+@import "simplemde.min";
+@import "./code";
+.dashboard {
+  background-image: image-url('O85Bccc.webp');
   background-size: cover;
   background-repeat: no-repeat;
-}
-.btn-file {
-  position: relative;
-  overflow: hidden;
-}
-.btn-file input[type=file] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  min-width: 100%;
-  min-height: 100%;
-  font-size: 100px;
-  text-align: right;
-  filter: alpha(opacity=0);
-  opacity: 0;
-  outline: none;
-  background: white;
-  cursor: inherit;
-  display: block;
 }
