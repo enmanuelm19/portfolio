@@ -13,12 +13,15 @@ html
       = meta_og_tags @og_properties
     = csrf_meta_tags
     = csp_meta_tag
+    link rel="preload" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style"
     link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     - if cookies[:mode] && cookies[:mode] == 'dark'
+      = stylesheet_link_tag 'application_dark', rel: "preload", as: "style", media: "all"
       = stylesheet_link_tag 'application_dark', media: 'all', 'data-turbolinks-track': 'reload'
     - else
+      = stylesheet_link_tag "application", rel: "preload", as: "style", media: "all"
       = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', async: Rails.env.production?, 'data-turbolinks-track': 'reload'
     - if Rails.env.production?
         javascript:
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
