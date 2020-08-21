@@ -12,7 +12,7 @@ html
       = stylesheet_link_tag 'admin/admin_dark', media: 'all', 'data-turbolinks-track': 'reload'
     - else
       = stylesheet_link_tag 'admin/admin', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'admin/admin', 'data-turbolinks-track': 'reload'
   body class="dashboard"
     = render partial: 'layouts/shared/admin_nav'
     br

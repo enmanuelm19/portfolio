@@ -13,7 +13,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require simplemde.min
+//= require ./direct_upload
 
 function closeNotification(){
   var notifications = Array.from(document.getElementsByClassName('notification'));
