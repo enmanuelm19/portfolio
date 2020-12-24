@@ -1,0 +1,33 @@
+section.hero.is-info.is-medium.is-bold
+  .hero-body.posts-presentation
+    .container.has-text-centered
+      h1.title.has-text-primary = "#{t('activerecord.models.experiment.other')}"
+      = search_form_for @q, url: playground_experiments_path  do |f|
+        .field.has-addons
+          .control.is-expanded
+            = f.search_field :title_cont, class: 'input is-rounded', placeholder: "#{t('actions.search')}..."
+          .control
+            = f.submit "#{t('actions.search')}", class: 'button is-info is-rounded'
+
+.container.is-fluid
+  div.articles
+    .columns.is-multiline.is-desktop
+      - @experiments.each do |experiment|
+        .column.is-one-third-widescreen.is-12-mobile
+          = link_to playground_experiment_path(experiment), rel: 'nofollow' do
+            .card.article
+              .card-content
+                .media
+                  .media-center
+                    - if experiment.header_image.attached?
+                      = image_tag(experiment.header_image, class: 'author-image')
+                    - else
+                      img.author-image alt=("Placeholder image") src="http://www.radfaces.com/images/avatars/daria-morgendorffer.jpg" /
+                  .media-content.has-text-centered
+                    p.title.article-title = "#{experiment.title}"
+                    .tags.has-addons.level-item
+                      span.tag.is-rounded.is-info @enmanuelm19
+                      span.tag.is-rounded = "#{experiment.created_at}"
+                .content.article-body
+                  = "#{experiment.code_reference}"
+    = paginate @experiments

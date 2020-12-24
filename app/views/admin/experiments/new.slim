@@ -1,0 +1,11 @@
+nav.breadcrumb aria-label="breadcrumbs" 
+  ul
+    li
+      = link_to 'Admin', admin_dashboard_path
+    li
+      = link_to 'Experimentos', admin_experiments_path
+    li.is-active
+      a arria-current='page' href='#' Nuevo
+br
+section.box
+  = render partial: 'form'

@@ -10,6 +10,8 @@ volume_status:
 	docker volume ls
 run_all:
 	docker-compose -p portfolio up -d
+run_rails:
+	docker-compose -p portfolio run --service-ports rails
 run:
 	docker-compose -p portfolio up -d rails postgresql
 run_mailcatcher:

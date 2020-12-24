@@ -1,0 +1,38 @@
+section.hero.is-info.is-medium.is-bold
+  .hero-body.posts-presentation
+    .container.has-text-centered
+      h1.title.has-text-primary = "#{@experiment.title}"
+
+.container.is-fluid
+  div
+    .columns
+      .column
+        .card.article
+          - if @experiment.header_image.attached?
+            .card-image
+              figure.image.is-5by3
+                = link_to(image_tag(@experiment.header_image), @experiment.header_image)
+          .card-content
+            .media
+              .media-content.has-text-centered
+                p.title.article-title = "#{@experiment.title}"
+                .tags.has-addons.level-item
+                  span.tag.is-rounded.is-info ="#{@experiment.user.email}"
+                  span.tag.is-rounded = "#{@experiment.created_at}"
+            .content
+              | Aqui va la magia
+            hr
+              .columns.is-centered
+                .column.has-text-centered.is-1
+                  p.has-text-weight-semibold style='border-bottom: 2px solid #01d1b2' = "#{t('actions.share')}"
+                  br
+                  .level
+                    .level-item
+                      a.button.is-info.is-outlined onClick="javascript:window.open('https://twitter.com/share?text=#{@experiment.title} por @enmanuel19 - &amp;url=#{url_for({ only_path: false })}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"
+                        span.icon.is-small
+                          i.fa.fa-twitter
+                    .level-item
+                      a.button.is-link.is-outlined onClick="javascript:window.open('https://www.facebook.com/sharer.php?u=#{url_for({ only_path: false })}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"
+                        span.icon.is-small
+                          i.fa.fa-facebook
+            hr

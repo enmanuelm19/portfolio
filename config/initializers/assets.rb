@@ -12,3 +12,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 Rails.application.config.assets.precompile += %w( application_dark.css admin/admin.css admin/admin_dark.css admin/admin.js)
+
+Sprockets.export_concurrent = false

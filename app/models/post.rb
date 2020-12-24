@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   validates :title, :content, :user_id, presence: true
   enum locale: %i[es en]
 
-  default_scope { order(id: :desc) } 
+  default_scope { order(id: :desc) }
   scope :published_posts, -> { where(published: true) }
   scope :unpublished_posts, -> { where.not(published: true) }
 end

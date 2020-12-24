@@ -1,0 +1,46 @@
+nav.breadcrumb aria-label="breadcrumbs" 
+  ul
+    li
+      = link_to "#{t('menu.dashboard')}", admin_dashboard_path
+    li.is-active
+      a aria-current="page" href="#" = "#{t('activerecord.models.post.other')}"
+br
+section.box
+  .columns.is-multiline.is-desktop
+    .column.is-1
+      = link_to "#{t('actions.new')}", new_admin_experiment_path, class: 'button is-primary is-outlined'
+    .column.is-11
+      = search_form_for @q, url: admin_experiments_path do |f|
+        .field.has-addons
+          .control.is-expanded.has-icons-left
+            = f.search_field :title_cont, class: 'input is-rounded', placeholder: "#{t('actions.search')}..."
+            span.icon.is-small.is-left
+              i.fa.fa-search
+          .control
+            = f.submit "#{t('actions.search')}", class: 'button is-primary is-rounded'
+    - @experiments.each do |experiment|
+      .column.is-4
+        .card
+          .card-image
+            figure.image.is-5by3
+              - if experiment.header_image.attached?
+                = link_to(image_tag(experiment.header_image), experiment.header_image)
+              - else
+                img src="https://bulma.io/images/placeholders/1280x960.png"
+
+          .card-content
+            .media
+              .media-left
+                figure.image.is-48x48
+                  img src="https://bulma.io/images/placeholders/96x96.png"
+              .media-content
+                p.title.is-4 = "#{experiment.title}"
+                p.subtitle.is-6 = "#{experiment.user.email}"
+            .content
+              = experiment.wrapper
+              time = "#{experiment.created_at}"
+          footer.card-footer
+            = link_to "#{t('actions.show')}", admin_experiment_path(experiment), class: 'card-footer-item'
+            = link_to "#{t('actions.edit')}", edit_admin_experiment_path(experiment), class: 'card-footer-item'
+            = link_to "#{t('actions.destroy')}", admin_post_path(experiment), class: 'card-footer-item', method: :delete, data: { confirm: '¿Estas seguro?' }
+  = paginate @experiments

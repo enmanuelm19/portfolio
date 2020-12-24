@@ -26,6 +26,7 @@ es:
     - :month
     - :year
   menu:
+    experiments: Playground
     home: Inicio
     posts: Posts
     projects: Proyectos
@@ -36,6 +37,9 @@ es:
     administration: Administración
   activerecord:
     models:
+      experiment:
+        one: Experimento
+        other: Experimentos
       post:
         one: Post
         other: Posts
@@ -46,6 +50,13 @@ es:
         one: Usuario
         other: Usuarios
     attributes:
+      experiment:
+        title: Título
+        published: Publicado
+        header_image: Imágen principal
+        code_reference: Url repositorio
+        component: Componente
+        wrapper: Wrapper
       post:
         title: Título
         content: Contenido
@@ -66,6 +77,14 @@ es:
         body: Mensaje
     errors:
       models:
+        experiment:
+          attributes:
+            title:
+              blank: no puede estar vacío
+            code_reference:
+              blank: no puede estar vacío
+            wrapper:
+              blank: no puede estar vacío
         post:
           attributes:
             title:

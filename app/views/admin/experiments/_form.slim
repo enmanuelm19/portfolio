@@ -1,0 +1,40 @@
+= form_for [:admin, @experiment] do |f|
+  - if @experiment.errors.any?
+    .notification.is-danger
+      button.delete onclick='closeNotification()'
+      = @experiment.errors.full_messages.flatten.join('<br>').html_safe
+  .field
+    label.label = "#{t('activerecord.attributes.experiment.title')}"
+    .control
+      = f.text_field :title, class: 'input'
+  .field
+    label.label = "#{t('activerecord.attributes.experiment.wrapper')}"
+    .control
+      = f.text_field :wrapper, class: 'input'
+  .field
+    .control
+      label.label = "#{t('activerecord.attributes.experiment.header_image')}"
+      .button.is-outlined.btn-file
+        = "#{t('actions.choose_file')}"
+        = f.file_field :header_image, direct_upload: true
+  .field
+    label.label = "#{t('activerecord.attributes.experiment.component')}"
+    .control
+      = f.text_field :component, class: 'input'
+  .field
+    label.label = "#{t('activerecord.attributes.experiment.code_reference')}"
+    .control
+      = f.text_field :code_reference, class: 'input'
+
+  br
+  .field
+    .control
+      label.label
+        = f.check_box :published, style: 'marging-right: 5px;'
+        = "  #{t('activerecord.attributes.experiment.published')}?"
+  .field.is-grouped.is-grouped-right
+    .control
+      = f.submit "#{t('actions.save')}", class: 'button is-primary is-outlined'
+    .control
+      = link_to "#{t('actions.cancel')}", admin_experiments_path, class: 'button is-danger is-outlined'
+

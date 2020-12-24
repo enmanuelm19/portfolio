@@ -10,10 +10,9 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/app/
-    command: >
-      bash -c "tail -f /dev/null"
+    command: bundle exec rails s
     ports:
-      - '5000:3000'
+      - 5000:3000
     depends_on:
       - postgresql
     restart: always

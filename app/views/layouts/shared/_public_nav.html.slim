@@ -12,13 +12,14 @@ nav.navbar
         = link_to "#{t('menu.home')}", root_path, class: 'navbar-item'
         = link_to "#{t('menu.posts')}", posts_path, class: 'navbar-item'
         = link_to "#{t('menu.projects')}", projects_path, class: 'navbar-item'
+        = link_to "#{t('menu.experiments')}", playground_experiments_path, class: 'navbar-item'
         = link_to "#{t('menu.contact')}", root_path(anchor: 'contacto'), class: 'navbar-item'
         = link_to root_path(locale: :es), class: 'navbar-item' do
           .icon
-            = image_tag "Venezuela-Flag-icon.webp"
+            = image_tag("Venezuela-Flag-icon.webp", alt: 'Venezuelan flag')
         = link_to root_path(locale: :en), class: 'navbar-item' do
           .icon
-            = image_tag "England-Flag-icon.png"
+            = image_tag("England-Flag-icon.png", alt: 'England flag')
         - if cookies[:mode] && cookies[:mode] == 'dark'
           = link_to mode_path(mode: 'light'), class: 'navbar-item', data: { turbolinks: 'false' } do
             i.fas.fa-adjust

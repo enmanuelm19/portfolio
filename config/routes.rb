@@ -18,10 +18,15 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :posts
       resources :projects
+      resources :experiments
       get 'dashboard', to: 'dashboard#index'
     end
 
     resources :posts, only: %i[index show]
     resources :projects, only: %i[index show]
+
+    namespace :playground do
+      resources :experiments, only: %i[index show]
+    end
   end
 end

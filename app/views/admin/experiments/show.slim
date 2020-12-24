@@ -1,0 +1,38 @@
+nav.breadcrumb aria-label="breadcrumbs" 
+  ul
+    li
+      = link_to "#{t('menu.dashboard')}", admin_dashboard_path
+    li
+      = link_to "#{t('menu.posts')}", admin_experiments_path
+    li.is-active
+      a aria-current='page' href='#' = "#{t('activerecord.models.post.one')}"
+br
+section.container.is-fluid
+  div
+    .columns
+      .column
+        .card.article
+          - if @experiment.header_image.attached?
+            .card-image
+              figure.image.is-5by3
+                = link_to(image_tag(@experiment.header_image), @experiment.header_image)
+          .card-content
+            .media
+              .media-content.has-text-centered
+                p.title.article-title = "#{@experiment.title}"
+                .tags.has-addons.level-item
+                  span.tag.is-rounded.is-info ="#{@experiment.user.email}"
+                  span.tag.is-rounded = "#{@experiment.created_at}"
+            .content.article-body
+              p
+                strong
+                  = "#{t('activerecord.attributes.experiment.wrapper')}: "
+                = @experiment.wrapper
+              p
+                strong
+                  = "#{t('activerecord.attributes.experiment.component')}: "
+                = @experiment.component
+              p
+                strong
+                  = "#{t('activerecord.attributes.experiment.code_reference')}: "
+                = @experiment.code_reference
