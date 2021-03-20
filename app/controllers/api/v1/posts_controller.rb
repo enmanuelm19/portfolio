@@ -1,6 +1,6 @@
 class Api::V1::PostsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_post, only: [:show, :update, :delete]
+  before_action :set_post, only: [:show, :update, :destroy]
 
   def index
     @posts = Post.where(created_at: 1.day.ago..Time.now)
@@ -28,7 +28,7 @@ class Api::V1::PostsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @post.destroy
     return { message: 'Post eliminado exitosamente' }
   end
