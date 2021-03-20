@@ -14,7 +14,7 @@ class Api::V1::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      render json: { message: 'Post creado exitosamente', post: @post }, state: :created
+      render json: { message: 'Post creado exitosamente', post: @post }, status: :created
     else
       render json: { errors: @post.errors }, status: :unprocessable_entity
     end
