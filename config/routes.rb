@@ -28,5 +28,11 @@ Rails.application.routes.draw do
     namespace :playground do
       resources :experiments, only: %i[index show]
     end
+
+    namespace :api, defaults: { format: :json } do
+      namespace :v1 do
+        resources :posts
+      end
+    end
   end
 end
