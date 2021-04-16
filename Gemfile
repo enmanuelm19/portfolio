@@ -21,6 +21,7 @@ gem 'rails', '~> 6.0.3'
 gem 'ransack'
 gem 'redcarpet'
 gem 'rouge'
+gem 'therubyracer', :platforms => :ruby
 gem 'sass-rails', '~> 6.0.0'
 gem 'slim-rails'
 gem 'simplemde-rails'
