@@ -39,6 +39,7 @@ group :development do
   gem 'bullet'
   gem 'capistrano',         require: false
   gem 'capistrano-db-tasks', require: false
+  gem 'capistrano-nvm', require: false
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
