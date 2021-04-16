@@ -15,6 +15,9 @@
 @import "bulma";
 @import "simplemde.min";
 @import "./code";
+@import "trix/dist/trix";
+@import "actiontext";
+
 .dashboard {
   background-image: image-url('O85Bccc.webp');
   background-size: cover;

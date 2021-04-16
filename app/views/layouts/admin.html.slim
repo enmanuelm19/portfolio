@@ -13,6 +13,7 @@ html
     - else
       = stylesheet_link_tag 'admin/admin', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'admin/admin', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application'
   body class="dashboard"
     = render partial: 'layouts/shared/admin_nav'
     br
