@@ -4,6 +4,9 @@ class Post < ApplicationRecord
   paginates_per 10
   belongs_to :user
   has_one_attached :header_image
+
+  has_rich_text :body
+
   validates :title, :content, :user_id, presence: true
   enum locale: %i[es en]
 

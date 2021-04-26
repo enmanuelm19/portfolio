@@ -24,4 +24,4 @@ section.container.is-fluid
                   span.tag.is-rounded.is-info ="#{@post.user.email}"
                   span.tag.is-rounded = "#{@post.created_at}"
             .content.article-body
-              = parse_content(@post.content)
+              == @post.body

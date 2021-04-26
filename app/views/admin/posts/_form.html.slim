@@ -10,7 +10,7 @@
   .field
     label.label = "#{t('activerecord.attributes.post.content')}"
     .control
-      = f.text_area :content, class: 'textarea'
+      = f.rich_text_area :body, class: 'customized-min-height'
   .field
     .control
       label.label = "#{t('activerecord.attributes.post.header_image')}"
@@ -33,5 +33,5 @@
       = f.submit "#{t('actions.save')}", class: 'button is-primary is-outlined'
     .control
       = link_to "#{t('actions.cancel')}", admin_posts_path, class: 'button is-danger is-outlined'
-javascript:
+/javascript:
   var simplemde = new SimpleMDE();

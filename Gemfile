@@ -10,6 +10,7 @@ gem 'bulma-rails', '~> 0.9.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'friendly_id'
+gem 'image_processing'
 gem 'jbuilder', '~> 2.5'
 gem 'kaminari'
 gem 'newrelic_rpm'
@@ -20,6 +21,7 @@ gem 'rails', '~> 6.0.3'
 gem 'ransack'
 gem 'redcarpet'
 gem 'rouge'
+gem 'therubyracer', :platforms => :ruby
 gem 'sass-rails', '~> 6.0.0'
 gem 'slim-rails'
 gem 'simplemde-rails'
@@ -38,6 +40,7 @@ group :development do
   gem 'bullet'
   gem 'capistrano',         require: false
   gem 'capistrano-db-tasks', require: false
+  gem 'capistrano-nvm', require: false
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false

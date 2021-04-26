@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/app/
-    command: bundle exec rails s
+    command: bundle exec rails s -b 0.0.0.0
     ports:
       - 5000:3000
     depends_on:

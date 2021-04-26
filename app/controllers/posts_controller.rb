@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.friendly.find(params[:id])
+    @post = Post.with_rich_text_body_and_embeds.friendly.find(params[:id])
   end
 
   def set_og_properties
