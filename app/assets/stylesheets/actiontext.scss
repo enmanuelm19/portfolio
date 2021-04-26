@@ -33,9 +33,16 @@
       max-width: 100% !important;
     }
   }
+
+  pre {
+    bacckground-color: "none";
+    .hljs {
+      background: #282828
+    }
+  }
 }
 
-.trix-editor {
+trix-editor {
   &.customized-min-height {
     min-height: 15em;
   }

@@ -19,4 +19,4 @@ console.log('Hello World from Webpacker')
 
 require("trix")
 require("@rails/actiontext")
-import "trix/dist/trix.css"
+import "highlight"
