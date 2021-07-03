@@ -37,7 +37,10 @@ section.box
                 p.title.is-4 = "#{post.title}"
                 p.subtitle.is-6 = "#{post.user.email}"
             .content
-              = truncate(parse_content(post.content), length: 75)
+              - if post.content.present?
+                = truncate(parse_content(post.content), length: 75)
+              - else
+                = post.body.to_plain_text.truncate(75)
               time = "#{post.created_at}"
           footer.card-footer
             = link_to "#{t('actions.show')}", admin_post_path(post), class: 'card-footer-item'

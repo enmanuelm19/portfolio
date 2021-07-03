@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   has_rich_text :body
 
-  validates :title, :content, :user_id, presence: true
+  validates :title, :body, :user_id, presence: true
   enum locale: %i[es en]
 
   default_scope { order(id: :desc) }

@@ -18,10 +18,11 @@ class PostsController < ApplicationController
   end
 
   def set_og_properties
+    @image = rails_blob_url(@post.header_image) if @post.header_image.attached?
     @og_properties = {
       title: @post.title,
       type: 'website',
-      image: rails_blob_url(@post.header_image),
+      image: @image,
       url: url_for(@post)
     }
   end

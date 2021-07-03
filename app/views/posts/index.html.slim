@@ -29,5 +29,8 @@ section.hero.is-info.is-medium.is-bold
                       span.tag.is-rounded.is-info @enmanuelm19
                       span.tag.is-rounded = "#{post.created_at}"
                 .content.article-body
-                  = parse_content(truncate(post.content, length: 75))
+                  - if post.content.present?
+                    = truncate(parse_content(post.content), length: 75)
+                  - else
+                    = post.body.to_plain_text.truncate(75)
     = paginate @posts
